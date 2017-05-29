@@ -1,7 +1,5 @@
 
-a<-"https://cdn-lb.vungle.com/zen/Client_30s_SoulHunters_PT_160516_iOS-1280x720-Q2.mp4"
-b<-"http://cdn-lb.vungle.com/zen/Summoner%20Fantasy%20cg%20trailer%2030s-1280x720-Q2.mp4"
-url2 <- "http://cdn-lb.vungle.com/zen/Client_15s_ChaoNengJiChengZhe_160429_android_launch_ch2-1280x720-Q2.mp4"
+
 
 download.file(a,"demo_video1.mp4",method = "libcurl")
 download.file(b,"demo_video2.mp4",method = "curl")
@@ -9,7 +7,7 @@ download.file(url2,"demo_video.mp4",method = "curl")
 
 
 
-urls<-read.csv("D:/Data Science Internal/Komal Vungle/myurl.csv")
+urls<-read.csv("D:/Data Science Internal/myurl.csv")
 url_list<-urls$data2.url
 
 urls[urls=="NULL"] <- NA
@@ -18,7 +16,7 @@ urls[urls==""] <- NA
 urls<-urls[complete.cases(urls),]
 urls[which(urls$data2.url=="1280" | urls$data2.url=="720"),]
 
-setwd("D:/Data Science Internal/Komal Vungle/Videos")
+setwd("D:/Data Science Internal/Videos")
 
 for(i in 501:600)
 {
