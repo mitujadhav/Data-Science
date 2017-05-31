@@ -131,6 +131,37 @@ model <- mx.model.FeedForward.create(NN_model, X = train_array, y = train_y,
                                      wd = 0.00001,
                                      eval.metric = mx.metric.accuracy,
                                      epoch.end.callback = mx.callback.log.train.metric(100))
+#Start training with 1 devices
+#[1] Train-accuracy=0.494196428571429
+#[2] Train-accuracy=0.493022222222223
+#[3] Train-accuracy=0.493155555555556
+#[4] Train-accuracy=0.493333333333334
+#[5] Train-accuracy=0.500755555555556
+#[6] Train-accuracy=0.531111111111111
+#[7] Train-accuracy=0.587022222222222
+#[8] Train-accuracy=0.628266666666667
+#[9] Train-accuracy=0.6496
+#[10] Train-accuracy=0.676444444444445
+#[11] Train-accuracy=0.6948
+#[12] Train-accuracy=0.7104
+#[13] Train-accuracy=0.724266666666667
+#[14] Train-accuracy=0.7368
+#[15] Train-accuracy=0.746488888888889
+#[16] Train-accuracy=0.757644444444445
+#[17] Train-accuracy=0.768977777777778
+#[18] Train-accuracy=0.780088888888889
+#[19] Train-accuracy=0.792533333333333
+#[20] Train-accuracy=0.803288888888889
+#[21] Train-accuracy=0.809955555555556
+#[22] Train-accuracy=0.80728888888889
+#[23] Train-accuracy=0.816044444444445
+#[24] Train-accuracy=0.82728888888889
+#[25] Train-accuracy=0.826133333333334
+#[26] Train-accuracy=0.831733333333334
+#[27] Train-accuracy=0.837333333333333
+#[28] Train-accuracy=0.846222222222223
+#[29] Train-accuracy=0.845377777777777
+#[30] Train-accuracy=0.852222222222222
 
 predict_probs <- predict(model, test_array)
 predicted_labels <- max.col(t(predict_probs)) - 1
@@ -144,9 +175,5 @@ sum(diag(table(test_data[, 1], predicted_labels)))/2500
 #[1] 0.6336
 
 write.csv(Test_output,file = "D:/Data Science Internal/Komal Vungle/catandDogPredicttion.csv")
-
-
-
-
 
 
